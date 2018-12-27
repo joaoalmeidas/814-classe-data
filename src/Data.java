@@ -4,6 +4,8 @@ public class Data {
 	private int dias;
 	private int ano;
 	
+	
+	
 	public Data(int dias, int mes, int ano) {
 		
 		
@@ -32,6 +34,14 @@ public class Data {
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+	
+	public static boolean ehBissexto(int ano) {
+		if(ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	
