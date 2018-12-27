@@ -8,7 +8,20 @@ public class Data {
 	
 	public Data(int dias, int mes, int ano) {
 		
+		for(int i = 1; i < mes; i++) {
+			
+			dias += diasPorMes[i];
+			
+		}
 		
+		if(ehBissexto(ano)) {
+			
+			dias++;
+			
+		}
+		
+		setDias(dias);
+		setAno(ano);
 		
 	}
 	
@@ -36,14 +49,24 @@ public class Data {
 		this.ano = ano;
 	}
 	
-	public static void ehBissexto(int ano) {
+	public static boolean ehBissexto(int ano) {
 		if(ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
-			diasPorMes[2] = 29;
+			return true;
 		}else {
-			diasPorMes[2] = 28;
+			return false;
 		}
 	}
 	
+	public static void verificaDias(int dia, int mes) {
+		
+		if(dia <= 0  || dia > diasPorMes[mes]) {
+			
+			throw new IllegalArgumentException("Dia fora dos limites do mes");
+			
+		}
+		
+		
+	}
 	
 	
 }
