@@ -4,7 +4,7 @@ public class Data {
 	private int dias;
 	private int ano;
 	
-	
+	private static final int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
 	public Data(int dias, int mes, int ano) {
 		
@@ -36,11 +36,11 @@ public class Data {
 		this.ano = ano;
 	}
 	
-	public static boolean ehBissexto(int ano) {
+	public static void ehBissexto(int ano) {
 		if(ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
-			return true;
+			diasPorMes[2] = 29;
 		}else {
-			return false;
+			diasPorMes[2] = 28;
 		}
 	}
 	
