@@ -6,6 +6,8 @@ public class Data {
 	
 	public Data(int dias, int mes, int ano) {
 		
+		
+		
 	}
 	
 	public Data(int dias, String mes, int ano) {
