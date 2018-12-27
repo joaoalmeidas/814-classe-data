@@ -30,29 +30,29 @@ public class Data {
 		
 		int mesData;
 		
-		if(mes == "Janeiro") {
+		if(mes.equals("Janeiro")) {
 			mesData = 1;
-		}else if(mes == "Fevereiro") {
+		}else if(mes.equals("Fevereiro")) {
 			mesData = 2;
-		}else if(mes == "Março") {
+		}else if(mes.equals("Março")) {
 			mesData = 3;
-		}else if(mes == "Abril") {
+		}else if(mes.equals("Abril")) {
 			mesData = 4;
-		}else if(mes == "Maio") {
+		}else if(mes.equals("Maio")) {
 			mesData = 5;
-		}else if(mes == "Junho") {
+		}else if(mes.equals("Junho")) {
 			mesData = 6;
-		}else if(mes == "Julho") {
+		}else if(mes.equals("Julho")) {
 			mesData = 7;
-		}else if(mes == "Agosto") {
+		}else if(mes.equals("Agosto")) {
 			mesData = 8;
-		}else if(mes == "Setembro") {
+		}else if(mes.equals("Setembro")) {
 			mesData = 9;
-		}else if(mes == "Outubro") {
+		}else if(mes.equals("Outubro")) {
 			mesData = 10;
-		}else if(mes == "Novembro") {
+		}else if(mes.equals("Novembro")) {
 			mesData = 11;
-		}else if(mes == "Dezembro") {
+		}else if(mes.equals("Dezembro")) {
 			mesData = 12;
 		}else {
 			throw new IllegalArgumentException("Mês não identificado.");
@@ -77,7 +77,8 @@ public class Data {
 	
 	public Data(int dias, int ano) {
 		
-		
+		setDias(dias);
+		setAno(ano);
 		
 	}
 
