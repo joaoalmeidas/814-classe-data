@@ -1,4 +1,4 @@
-import java.util.EnumSet;
+import java.text.DecimalFormat;
 
 public class Data {
 	
@@ -113,7 +113,14 @@ public class Data {
 			throw new IllegalArgumentException("Dia fora dos limites do mes");
 			
 		}
+			
+	}
+	
+	public void exibeFormatoDiaAno() {
 		
+		DecimalFormat diaformato = new DecimalFormat("000");
+		
+		System.out.println("Formato DDD YYYY\n"+diaformato.format(getDias())+" "+getAno());
 		
 	}
 	
