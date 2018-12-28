@@ -165,6 +165,16 @@ public class Data {
 		
 	}
 	
+	public void exibeFormateDiaMesAno() {
+		
+		DecimalFormat df = new DecimalFormat("00");
+		
+		System.out.println("Formato DD/MM/YYYY");
+		
+		System.out.println(df.format(retornaDia())+"/"+df.format(retornaMes())+"/"+getAno());
+		
+	}
+	
 	public int retornaMes() {
 		
 		int diasEx = getDias();

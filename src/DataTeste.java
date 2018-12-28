@@ -13,6 +13,8 @@ public class DataTeste {
 		diaMesAno.exibeFormatoMesString();
 		
 		diaAno.exibeFormatoMesString();
+		
+		diaAno.exibeFormateDiaMesAno();
 	}
 	
 }
