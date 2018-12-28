@@ -126,31 +126,10 @@ public class Data {
 	
 	public void exibeFormatoMesString() {
 		
-		int diasEx = getDias();
-		int mesEx = 1;
+		int diasEx = retornaDia();
+		int mesEx = retornaMes();
 		
-		for(int i = 1; i < diasPorMes.length; i++) {
-			
-			if(mesEx == 2 && ehBissexto(getAno())) {
-				
-				if(diasEx > diasPorMes[i] + 1) {
-					
-					diasEx -= diasPorMes[i] + 1;
-					mesEx++;
-					
-				}
-				
-			}else {
-				if(diasEx > diasPorMes[i]) {
-					
-					diasEx -= diasPorMes[i];
-					mesEx++;
-					
-				}
-			}
-			
-			
-		}
+		
 		
 		System.out.println("Formato DD de MES de YYYY");
 		
@@ -183,6 +162,70 @@ public class Data {
 		}
 		
 		System.out.println(getAno());
+		
+	}
+	
+	public int retornaMes() {
+		
+		int diasEx = getDias();
+		int mesEx = 1;
+		
+		for(int i = 1; i < diasPorMes.length; i++) {
+			
+			if(mesEx == 2 && ehBissexto(getAno())) {
+				
+				if(diasEx > diasPorMes[i] + 1) {
+					
+					diasEx -= diasPorMes[i] + 1;
+					mesEx++;
+					
+				}
+				
+			}else {
+				if(diasEx > diasPorMes[i]) {
+					
+					diasEx -= diasPorMes[i];
+					mesEx++;
+					
+				}
+			}
+			
+			
+		}
+		
+		return mesEx;
+		
+	}
+	
+	public int retornaDia() {
+		
+		int diasEx = getDias();
+		int mesEx = 1;
+		
+		for(int i = 1; i < diasPorMes.length; i++) {
+			
+			if(mesEx == 2 && ehBissexto(getAno())) {
+				
+				if(diasEx > diasPorMes[i] + 1) {
+					
+					diasEx -= diasPorMes[i] + 1;
+					mesEx++;
+					
+				}
+				
+			}else {
+				if(diasEx > diasPorMes[i]) {
+					
+					diasEx -= diasPorMes[i];
+					mesEx++;
+					
+				}
+			}
+			
+			
+		}
+		
+		return diasEx;
 		
 	}
 	
