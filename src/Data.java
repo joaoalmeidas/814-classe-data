@@ -98,7 +98,7 @@ public class Data {
 		this.ano = ano;
 	}
 	
-	public static boolean ehBissexto(int ano) {
+	public boolean ehBissexto(int ano) {
 		if(ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0)) {
 			return true;
 		}else {
@@ -123,6 +123,70 @@ public class Data {
 		System.out.println("Formato DDD YYYY\n"+diaformato.format(getDias())+" "+getAno());
 		
 	}
+	
+	public void exibeFormatoMesString() {
+		
+		int diasEx = getDias();
+		int mesEx = 1;
+		
+		for(int i = 1; i < diasPorMes.length; i++) {
+			
+			if(mesEx == 2 && ehBissexto(getAno())) {
+				
+				if(diasEx > diasPorMes[i] + 1) {
+					
+					diasEx -= diasPorMes[i] + 1;
+					mesEx++;
+					
+				}
+				
+			}else {
+				if(diasEx > diasPorMes[i]) {
+					
+					diasEx -= diasPorMes[i];
+					mesEx++;
+					
+				}
+			}
+			
+			
+		}
+		
+		System.out.println("Formato DD de MES de YYYY");
+		
+		System.out.printf("%d de ", diasEx);
+		
+		if(mesEx == 1) {
+			System.out.printf("Janeiro de ");
+		}else if(mesEx == 2) {
+			System.out.printf("Fevereiro de ");
+		}else if(mesEx == 3) {
+			System.out.printf("Março de ");
+		}else if(mesEx == 4) {
+			System.out.printf("Abril de ");
+		}else if(mesEx == 5) {
+			System.out.printf("Maio de ");
+		}else if(mesEx == 6) {
+			System.out.printf("Junho de ");
+		}else if(mesEx == 7) {
+			System.out.printf("Julho de ");
+		}else if(mesEx == 8) {
+			System.out.printf("Agosto de ");
+		}else if(mesEx == 9) {
+			System.out.printf("Setembro de ");
+		}else if(mesEx == 10) {
+			System.out.printf("Outubro de ");
+		}else if(mesEx == 11) {
+			System.out.printf("Novembro de ");
+		}else if(mesEx == 12) {
+			System.out.printf("Dezembro de ");
+		}
+		
+		System.out.println(getAno());
+		
+	}
+	
+
 	
 	
 }
