@@ -9,13 +9,30 @@ public class Data {
 	
 	public Data(int dias, int mes, int ano) {
 		
+		
+		if(mes == 2 && ehBissexto(ano) == true) {
+			throw new IllegalArgumentException("Dia fora dos limites.");
+		}
+		
+		if(dias > diasPorMes[mes] || dias < 1) {
+			throw new IllegalArgumentException("Dia fora dos limites.");
+		}
+		
+		if(mes < 1 || mes > 12) {
+			throw new IllegalArgumentException("Mês fora dos limites");
+		}
+		
+		if(ano < 1) {
+			throw new IllegalArgumentException("Ano fora dos limites");
+		}
+		
 		for(int i = 1; i < mes; i++) {
 			
 			dias += diasPorMes[i];
 			
 		}
 		
-		if(ehBissexto(ano)) {
+		if(ehBissexto(ano) && mes > 2) {
 			
 			dias++;
 			
@@ -58,13 +75,29 @@ public class Data {
 			throw new IllegalArgumentException("Mês não identificado.");
 		}
 		
+		if(mesData == 2 && ehBissexto(ano) == true) {
+			throw new IllegalArgumentException("Dia fora dos limites.");
+		}
+		
+		if(dias > diasPorMes[mesData] || dias < 1) {
+			throw new IllegalArgumentException("Dia fora dos limites.");
+		}
+		
+		if(mesData < 1 || mesData > 12) {
+			throw new IllegalArgumentException("Mês fora dos limites");
+		}
+		
+		if(ano < 1) {
+			throw new IllegalArgumentException("Ano fora dos limites");
+		}
+		
 		for(int i = 1; i < mesData; i++) {
 			
 			dias += diasPorMes[i];
 			
 		}
 		
-		if(ehBissexto(ano)) {
+		if(ehBissexto(ano) && mesData > 2) {
 			
 			dias++;
 			
@@ -76,6 +109,30 @@ public class Data {
 	}
 	
 	public Data(int dias, int ano) {
+		
+		if(ehBissexto(ano) == true && dias > 366) {
+			
+			throw new IllegalArgumentException("Dia fora dos limites.");
+			
+		}
+		
+		if(ehBissexto(ano) == false && dias > 365) {
+			
+			throw new IllegalArgumentException("Dia fora dos limites.");
+			
+		}
+		
+		if(dias < 1) {
+			
+			throw new IllegalArgumentException("Dia fora dos limites.");
+			
+		}
+		
+		if(ano < 1) {
+			
+			throw new IllegalArgumentException("Ano fora dos limites.");
+			
+		}
 		
 		setDias(dias);
 		setAno(ano);
