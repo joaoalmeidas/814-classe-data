@@ -163,15 +163,6 @@ public class Data {
 		}
 	}
 	
-	public static void verificaDias(int dia, int mes) {
-		
-		if(dia <= 0  || dia > diasPorMes[mes]) {
-			
-			throw new IllegalArgumentException("Dia fora dos limites do mes");
-			
-		}
-			
-	}
 	
 	public void exibeFormatoDiaAno() {
 		
